@@ -3,75 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Web Sayfası</title>
+    <title>İnternet Teknolojileri Ödevi - Kişisel Web Sayfası</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f0f4f8;
             color: #333;
             display: flex;
             justify-content: center;
-            align-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
         }
-        .card {
+
+        .container {
             background-color: #ffffff;
-            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
             width: 100%;
+            padding: 40px;
+        }
+
+        header {
             text-align: center;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
+
         h1 {
-            color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 12px;
+            color: #1a365d;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
         }
-        p.tagline {
-            color: #3498db;
+
+        .subtitle {
+            color: #3182ce;
             font-weight: 600;
             font-size: 1.1rem;
-            margin-bottom: 20px;
         }
-        p.bio {
-            line-height: 1.6;
-            color: #555;
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 1.2rem;
+            color: #2b6cb0;
+            margin-bottom: 10px;
+            border-left: 4px solid #3182ce;
+            padding-left: 10px;
+        }
+
+        .bio {
+            line-height: 1.7;
+            color: #4a5568;
             font-size: 1rem;
         }
-        .footer-note {
+
+        .dns-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .dns-table th, .dns-table td {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dns-table th {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+        }
+
+        .dns-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e6fffa;
+            color: #234e52;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
             margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eef2f5;
+            color: #718096;
             font-size: 0.85rem;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- Buraya Adınızı ve Soyadınızı Yazın -->
-        <h1>Adınız Soyadınız</h1>
-        
-        <p class="tagline">Öğrenci / Web Geliştirici Adayı</p>
-        
-        <!-- Kısa Açıklama -->
-        <p class="bio">
-            Merhaba! Bu web sayfası İnternet Teknolojileri dersi ödevi kapsamında hazırlanmıştır. 
-            ClouDNS üzerinden DNS konfigürasyonları (A, CNAME, MX, NS) tamamlanarak yayına alınmıştır.
-        </p>
+    <div class="container">
+        <!-- Profil / Kişisel Bilgiler -->
+        <header>
+            <!-- Buraya Adınızı Soyadınızı Yazın -->
+            <h1>Adınız Soyadınız</h1>
+            <p class="subtitle">Öğrenci Numarası: 123456789</p>
+        </header>
 
-        <div class="footer-note">
-            © 2026 Kişisel Web Sayfası - Tüm Hakları Saklıdır.
+        <!-- Açıklama / Biyografi -->
+        <div class="section">
+            <h2>Hakkımda / Ödev Açıklaması</h2>
+            <p class="bio">
+                Merhaba! Bu web sayfası İnternet Teknolojileri dersi ödevi kapsamında hazırlanmıştır. 
+                Sayfa altyapısı <strong>GitHub Pages</strong> üzerinde barındırılmakta olup, DNS alan adı yönetimi 
+                <strong>ClouDNS</strong> servisi aracılığıyla yapılandırılmıştır.
+            </p>
         </div>
+
+        <!-- Ödev Teknik Detayları (Hocanın Dikkatini Çekecek Kısım) -->
+        <div class="section">
+            <h2>Yapılandırılan DNS Kayıtları</h2>
+            <table class="dns-table">
+                <thead>
+                    <tr>
+                        <th>Kayıt Türü</th>
+                        <th>Host</th>
+                        <th>Yönlendirilen Adres / Değer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge">NS</span></td>
+                        <td>@</td>
+                        <td>ns1.cloudns.net (ClouDNS Name Server)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">A</span></td>
+                        <td>@</td>
+                        <td>185.199.108.153 (GitHub Pages IP)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">CNAME</span></td>
+                        <td>www</td>
+                        <td>kullaniciadi.github.io</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">MX</span></td>
+                        <td>@</td>
+                        <td>mail.cloudns.net (Priority: 10)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Alt Bilgi -->
+        <footer>
+            <p>© 2026 Kişisel Web Sayfası Ödevi | Tüm Hakları Saklıdır.</p>
+        </footer>
     </div>
 
 </body>
